@@ -1,0 +1,388 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MFS Survey\n"
+"POT-Creation-Date: 2013-10-10 20:09+0530\n"
+"PO-Revision-Date: 2013-10-10 20:13+0530\n"
+"Last-Translator: Mindfire Solutions <info@mindfiresolutions.com>\n"
+"Language-Team: Mindfire Solutions <info@mindfiresolutions.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\virtual\\mfs-survey\\wp-content\\plugins\\mfs-"
+"survey\n"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/display-survey.php:696
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:262
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:213
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:218
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:207
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/page-form.php:102
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:195
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-form.php:60
+msgid "Save"
+msgstr "Save"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/display-survey.php:717
+msgid "This survey ends here"
+msgstr "This survey ends here"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/display-survey.php:721
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/display-survey.php:738
+msgid "Please take another"
+msgstr "Please take another"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/display-survey.php:721
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/display-survey.php:738
+msgid "Survey"
+msgstr "Survey"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/display-survey.php:734
+msgid "This survey needs some modification"
+msgstr "This survey needs some modification"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/display-survey.php:745
+msgid "This survey is not available"
+msgstr "This survey is not available"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:70
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:73
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:46
+msgid "Manage Survey"
+msgstr "Manage Survey"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:73
+msgid "All Survey"
+msgstr "All Survey"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:76
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-form.php:37
+msgid "Add Survey"
+msgstr "Add Survey"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:79
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/page-form.php:67
+msgid "Add Page"
+msgstr "Add Page"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:82
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:92
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:182
+msgid "Add Question"
+msgstr "Add Question"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:85
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-result-form.php:37
+msgid "Survey Result"
+msgstr "Survey Result"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:88
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-result-form.php:96
+msgid "Survey Report"
+msgstr "Survey Report"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:91
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:67
+msgid "Edit Survey"
+msgstr "Edit Survey"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:94
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:73
+msgid "Edit Page"
+msgstr "Edit Page"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:97
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:81
+msgid "Edit Question"
+msgstr "Edit Question"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:340
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:102
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:136
+msgid "Question"
+msgstr "Question"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:343
+msgid "Answer"
+msgstr "Answer"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/mfs-survey.php:363
+msgid "No questions found"
+msgstr "No questions found"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/ajax/ajax-edit-page.php:98
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/ajax/ajax-survey.php:22
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:224
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:100
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:90
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:99
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:177
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/page-form.php:90
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:113
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:122
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:146
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:162
+msgid "Please Choose"
+msgstr "Please Choose"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:40
+msgid "Are you sure to delete this Question?"
+msgstr "Are you sure to delete this Question?"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:41
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:44
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:42
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:34
+msgid "This is not a valid Page"
+msgstr "This is not a valid Page"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:80
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:75
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:103
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:101
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-form.php:46
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-result-form.php:93
+msgid "Survey Name"
+msgstr "Survey Name"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:83
+msgid "Current Page"
+msgstr "Current Page"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:103
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:129
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:104
+msgid "Active"
+msgstr "Active"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:153
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:188
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:156
+msgid "Edit"
+msgstr "Edit"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:159
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:202
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:170
+msgid "Delete"
+msgstr "Delete"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:179
+msgid "Edit Next Page for Options"
+msgstr "Edit Next Page for Options"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-page-form.php:199
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:47
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:160
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:37
+msgid "Option"
+msgstr "Option"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:40
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/page-form.php:30
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:30
+msgid "This is not valid Survey"
+msgstr "This is not valid Survey"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:41
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:31
+msgid "Please add Page for this Survey"
+msgstr "Please add Page for this Survey"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:42
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:32
+msgid "Please add your question"
+msgstr "Please add your question"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:43
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:33
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:175
+msgid "Please add your question and option"
+msgstr "Please add your question and option"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:45
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:35
+msgid "Next Page is not valid"
+msgstr "Next Page is not valid"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:46
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:36
+msgid "This is not valid Question Type"
+msgstr "This is not valid Question Type"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:88
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:128
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/page-form.php:76
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:104
+msgid "Page Name"
+msgstr "Page Name"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:91
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:135
+msgid "Question Type"
+msgstr "Question Type"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-question-form.php:129
+msgid "Edit Question and Options"
+msgstr "Edit Question and Options"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:40
+msgid "Are you sure to delete this Page?"
+msgstr "Are you sure to delete this Page?"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:41
+msgid "This is not a valid Survey"
+msgstr "This is not a valid Survey"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:43
+msgid "Start Page is not valid"
+msgstr "Start Page is not valid"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:78
+msgid "Select Start Page"
+msgstr "Select Start Page"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:81
+msgid "Select End Page"
+msgstr "Select End Page"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:130
+msgid "Next Page"
+msgstr "Next Page"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/edit-survey-form.php:193
+msgid "Add question for this page"
+msgstr "Add question for this page"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:35
+msgid "Once published you are unable to unpublish!"
+msgstr "Once published you are unable to unpublish!"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:36
+msgid "Are you sure to delete this Survey?"
+msgstr "Are you sure to delete this Survey?"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:76
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-report-form.php:57
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-result-form.php:68
+msgid "items"
+msgstr "items"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:81
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-report-form.php:62
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-result-form.php:73
+msgid "Prev"
+msgstr "Prev"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:82
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-report-form.php:63
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-result-form.php:74
+msgid "Next"
+msgstr "Next"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:150
+msgid "Publish"
+msgstr "Publish"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:161
+msgid "Add page for this survey"
+msgstr "Add page for this survey"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:180
+msgid "Published"
+msgstr "Published"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:191
+msgid "No surveys found"
+msgstr "No surveys found"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/manage-survey.php:214
+msgid "Create New Survey"
+msgstr "Create New Survey"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/page-form.php:45
+msgid "Survey saved"
+msgstr "Survey saved"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/page-form.php:58
+msgid "Page name already exits for this survey. Please provide other name."
+msgstr "Page name already exits for this survey. Please provide other name."
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/page-form.php:79
+msgid "Survey name"
+msgstr "Survey name"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:52
+msgid "Page saved"
+msgstr "Page saved"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:64
+msgid "Question saved"
+msgstr "Question saved"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:76
+msgid "Question already exits for this page."
+msgstr "Question already exits for this page."
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:77
+msgid "Please choose other page."
+msgstr "Please choose other page."
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:78
+msgid "For editing this page move to \"Manage Survey\" section."
+msgstr "For editing this page move to \"Manage Survey\" section."
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/question-form.php:138
+msgid "Next Page Name"
+msgstr "Next Page Name"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-form.php:28
+msgid "Survey name already exits. Please provide other name."
+msgstr "Survey name already exits. Please provide other name."
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-report-form.php:36
+msgid "Survey Report for"
+msgstr "Survey Report for"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-report-form.php:89
+msgid "User"
+msgstr "User"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-report-form.php:92
+msgid "Email"
+msgstr "Email"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-report-form.php:95
+msgid "View Result"
+msgstr "View Result"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-report-form.php:114
+msgid "View result of "
+msgstr "View result of "
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-report-form.php:114
+msgid " for "
+msgstr " for "
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-report-form.php:114
+msgid "Click to view result"
+msgstr "Click to view result"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-report-form.php:121
+msgid "No users participated in this survey"
+msgstr "No users participated in this survey"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-result-form.php:94
+msgid "Total Questions"
+msgstr "Total Questions"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-result-form.php:95
+msgid "Total Participants"
+msgstr "Total Participants"
+
+#: D:\virtual\mfs-survey\wp-content\plugins\mfs-survey/forms/survey-result-form.php:114
+msgid "Click to view report"
+msgstr "Click to view report"
