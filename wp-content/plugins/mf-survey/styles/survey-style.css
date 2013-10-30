@@ -1,0 +1,38 @@
+.button {
+	font-weight:bold;
+}
+
+/* Used in survey-report-form.php */
+.dv_survey_report {
+	width: 100%;
+	/*max-height: 400px;*/
+	overflow: auto;
+}
+
+.dv_survey_report table.report td div {
+	width:300px;
+}
+
+/* Used in display_survey.php */
+table#tbl_radio {
+	width:auto;
+	border:none;
+}
+
+table#tbl_radio  td{
+	border:none;
+}
+
+table#tbl_checkbox {
+	width:auto;
+	border:none;
+}
+
+table#tbl_checkbox  td{
+	border:none;
+}
+
+/* Used in edit-survey-form.php */
+table#tbl_edit_survey td {
+	height: 26px;
+}
