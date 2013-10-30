@@ -336,10 +336,10 @@ function mfs_survey_view_result() {
 		<table class="widefat page report" cellspacing="5" cellpadding="2" width="90%" align="center">
 			<thead>
 				<tr>
-					<th width="30%">
+					<th width="30%" style="text-align:left;">
 						<?php _e('Question', 'mfs-survey'); ?>
 					</th>
-					<th>
+					<th style="text-align:left;">
 						<?php _e('Answer', 'mfs-survey'); ?>
 					</th>
 				</tr>
@@ -351,8 +351,8 @@ function mfs_survey_view_result() {
 					foreach($survey_result as $result_data) {
 						
 						echo '<tr>';
-						echo '<td>' . $result_data->question . '</td>';
-						echo '<td>' . $result_data->answer . '</td>';
+						echo '<td valign="top">' . esc_html( stripslashes_deep($result_data->question)) . '</td>';
+						echo '<td valign="top">' . esc_html( stripslashes_deep($result_data->answer)) . '</td>';
 						echo '</tr>';
 						
 					}
