@@ -26,16 +26,6 @@ Domain Path: 	/lang
 add_action( 'admin_menu', 'surveys_add_menu_link' );
 
 /**
- * The function create_survey_page is hooked when plugin is activated
- */
-register_activation_hook( __FILE__, 'create_survey_page' );
-
-/**
- * The function change_post_status is hooked when plugin is deactivated
- */
-register_deactivation_hook( __FILE__, 'change_post_status' );
-
-/**
  * Includes install-uninstall-tables.php
  */
 require_once( __DIR__ . '/install-uninstall-tables.php' );
@@ -224,44 +214,6 @@ function add_edit_question() {
 }
 
 /**
- * @method : create_survey_page()
- * @return : void
- * @desc : This function checks if "Survey" page is added in menu on front-end
- */
-function create_survey_page() {
-	
-	global $user_ID;
-	$post_id = search_survey_page_id();
-	
-	// (If) "Survey" page is not added in front-end then add it
-	// (Else If) "Survey" page is added then change post_status of "Survey" page to publish
-	if ( empty( $post_id ) ) {
-	
-		$my_page = array();
-		$my_page['post_title'] = 'Survey';
-		$my_page['post_content'] = '[surveys]';
-		$my_page['post_status'] = 'publish';
-		$my_page['post_author'] = $user_ID;
-		$my_page['post_type'] = 'page';
-		$my_page['post_parent'] = 0;
-		$my_page['guid'] = '';
-		$my_page['comment_status'] = 'closed';
-		$my_page['ping_status'] = 'closed';
-
-		wp_insert_post( $my_page );
-		
-	} else {
-		
-		$current_post = get_post( $post_id, 'ARRAY_A' );
-		$current_post['post_status'] = 'publish';
-		$current_post['post_content'] = '[surveys]';
-		wp_update_post( $current_post );
-		
-	}
-	
-}
-
-/**
  * @method : get_all_surveys()
  * @return : void
  * @desc : Includes display-survey.php
@@ -276,42 +228,6 @@ function get_all_surveys() {
  * This creates shortcode "[surveys]" which calls function get_all_surveys()
  */
 add_shortcode( 'surveys', 'get_all_surveys' );
-
-/**
- * @method : change_post_status()
- * @return : void
- * @desc : This function change the post status for "Survey" page to draft
- */
-function change_post_status() {
-
-	$post_id = search_survey_page_id();
-	$current_post = get_post( $post_id, 'ARRAY_A' );
-	$current_post['post_status'] = 'draft';
-	wp_update_post( $current_post );
-	
-}
-
-/**
- * @method : change_post_status()
- * @return : $post_id integer
- * @desc : This function returns the post_id for Survey page if available
- */
-function search_survey_page_id() {
-
-	global $wpdb;
-	
-	$get_post_query = "SELECT $wpdb->posts.ID 
-		FROM $wpdb->posts
-		WHERE $wpdb->posts.post_title = 'Survey' 
-		AND $wpdb->posts.post_type = 'page'
-	";
-
-	$get_post_row = $wpdb -> get_row( $get_post_query );
-	$post_id = $get_post_row -> ID;
-	
-	return $post_id;
-	
-}
 
 add_action( 'wp_ajax_mfs_survey_view_result', 'mfs_survey_view_result' );
 

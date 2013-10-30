@@ -718,8 +718,8 @@ function get_question_details( $page_id, $result_id ) {
 function display_last_page() {
 
 	_e('This survey ends here', 'mfs-survey');
-	$url = get_site_url();
-	$survey_url = $url."/survey";
+	$page_id = search_survey_page_id();
+	$survey_url = get_permalink($page_id);
 	?>
 	<br /><br /><?php _e('Please take another', 'mfs-survey'); ?> <a href="<?php echo $survey_url; ?>"><?php _e('Survey', 'mfs-survey'); ?></a>
 	<?php
@@ -735,8 +735,9 @@ function display_last_page() {
 function display_error_page() {
 
 	_e('This survey needs some modification', 'mfs-survey');
-	$url = get_site_url();
-	$survey_url = $url."/survey";
+	//$url = get_site_url();
+	$page_id = search_survey_page_id();
+	$survey_url = get_permalink($page_id);
 	?>
 	<br /><br /><?php _e('Please take another', 'mfs-survey'); ?> <a href="<?php echo $survey_url; ?>"><?php _e('Survey', 'mfs-survey'); ?></a>
 	<?php
@@ -747,6 +748,27 @@ function display_survey_error_page() {
 
 	_e('This survey is not available', 'mfs-survey');
 
+}
+
+/**
+ * @method : change_post_status()
+ * @return : $post_id integer
+ * @desc : This function returns the post_id for Survey page if available
+ */
+function search_survey_page_id() {
+
+	global $wpdb;
+	
+	$get_post_query = "SELECT ID 
+		FROM $wpdb->posts
+		WHERE post_content LIKE '%[surveys]%'
+	";
+
+	$get_post_row = $wpdb -> get_row( $get_post_query );
+	$post_id = $get_post_row -> ID;
+	
+	return $post_id;
+	
 }
 
 ?>
