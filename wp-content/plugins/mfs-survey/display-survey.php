@@ -296,14 +296,17 @@ function get_answer_details( $result_id ) {
 	
 	} else {
 	
+		$user_id = get_current_user_id();
+		
 		// If radio_next_page_id is available the return 
 		// page_id corrsponding to a particular option
 		// Get option from wp_survey_answer table
 		$query_answer = 
 			"
 				SELECT answer
-				FROM $wp_survey_answer
-				WHERE fk_question_id = 
+				FROM $wp_survey_answer				
+				WHERE fk_user_id = $user_id
+				AND fk_question_id =
 				(
 					SELECT question_id
 					FROM $wp_survey_question
