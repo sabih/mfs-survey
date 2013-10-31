@@ -742,9 +742,20 @@ function display_error_page() {
 
 }
 
+/**
+ * @method : display_survey_error_page()
+ * @return : void
+ * @desc : This function displays error message 
+			when survey id is changed in URL
+ */
 function display_survey_error_page() {
 
 	_e('This survey is not available', 'mfs-survey');
+	$page_id = search_survey_page_id();
+	$survey_url = get_permalink($page_id);
+	?>
+	<br /><br /><?php _e('Please take another', 'mfs-survey'); ?> <a href="<?php echo $survey_url; ?>"><?php _e('Survey', 'mfs-survey'); ?></a>
+	<?php
 
 }
 
