@@ -52,9 +52,7 @@ function display_survey() {
 	
 	} else {
 	
-		$url = get_site_url();
-		$survey_url = $url."/wp-login.php";
-		
+		$survey_url = wp_login_url( get_permalink() );		
 		$options = "Please <a href='$survey_url'>Log in</a> to take survey";
 	
 	}
@@ -313,6 +311,7 @@ function get_answer_details( $result_id ) {
 					WHERE fk_page_id = %d AND		
 					question_type !='Button'
 				)
+				ORDER BY answer_id DESC LIMIT 1
 			";
 		
 		$answer = $wpdb->get_var( $wpdb->prepare( $query_answer, $page_id ));
@@ -368,8 +367,8 @@ function save_user_details( $survey_id ) {
 	"
 		SELECT result_id, fk_survey_id
 		FROM $wp_survey_result 
-		WHERE fk_user_id = %d AND
-		fk_survey_id = %d
+		WHERE fk_user_id = %d 
+		AND fk_survey_id = %d
 	";
 
 	$result = $wpdb->get_row( $wpdb->prepare( $query, $user_id, $survey_id ));
@@ -735,7 +734,6 @@ function display_last_page() {
 function display_error_page() {
 
 	_e('This survey needs some modification', 'mfs-survey');
-	//$url = get_site_url();
 	$page_id = search_survey_page_id();
 	$survey_url = get_permalink($page_id);
 	?>
@@ -761,7 +759,8 @@ function search_survey_page_id() {
 	
 	$get_post_query = "SELECT ID 
 		FROM $wpdb->posts
-		WHERE post_content LIKE '%[surveys]%'
+		WHERE post_content 
+		LIKE '%[surveys]%'
 	";
 
 	$get_post_row = $wpdb -> get_row( $get_post_query );

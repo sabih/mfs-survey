@@ -252,7 +252,7 @@ function mfs_survey_view_result() {
 		<table class="widefat page report" cellspacing="5" cellpadding="2" width="90%" align="center">
 			<thead>
 				<tr>
-					<th width="30%" style="text-align:left;">
+					<th width="50%" style="text-align:left;">
 						<?php _e('Question', 'mfs-survey'); ?>
 					</th>
 					<th style="text-align:left;">

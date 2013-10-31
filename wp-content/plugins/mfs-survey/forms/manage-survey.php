@@ -187,8 +187,8 @@ wp_localize_script( 'manage-survey-script', 'manage_survey_object', $translation
 				} else {
 					?>
 					<tr>
-						<th colspan="2">
-							<?php _e('No surveys found', 'mfs-survey'); ?>
+						<th colspan="5">
+							<?php _e('Please create new Survey!', 'mfs-survey'); ?>
 						</th>
 					</tr>
 					<?php
@@ -203,13 +203,16 @@ wp_localize_script( 'manage-survey-script', 'manage_survey_object', $translation
 		<input type="hidden" name="hid_url" id="hid_url" value="<?php echo $current_page_url; ?>" />
 		<input type="hidden" name="hid_survey_checked_ids" id="hid_survey_checked_ids" value="" />
 		
-		<p class="submit">
-			<input type="submit" name="btn_manage_survey" id="btn_manage_survey" value="<?php _e('Save', 'mfs-survey'); ?>" class="button" />
-		</p>
+		<?php if( $chk_box_id_incr !== 0 ) { ?>
+			<p class="submit">
+				<input type="submit" name="btn_manage_survey" id="btn_manage_survey" value="<?php _e('Save', 'mfs-survey'); ?>" class="button" />
+			</p>
+		<?php } ?>
 		
 	</form>	
 </div>
 
 <div>
+	<?php if( $chk_box_id_incr === 0 ) { echo "<br />"; } ?>
 	<a href="admin.php?page=forms/survey-form"><?php _e('Create New Survey', 'mfs-survey'); ?></a>
 </div>
