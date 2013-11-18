@@ -29,12 +29,8 @@ wp_enqueue_script( 'edit-question-script' );
 wp_register_script( 'question-script', plugins_url() . '/mfs-survey/scripts/question-script.js', 'jquery' );
 wp_enqueue_script( 'question-script' );
 
-wp_register_script( 'jquery-min', plugins_url() . '/mfs-survey/scripts/jquery/jquery.min.js', 'jquery' );
-wp_enqueue_script( 'jquery-min' );
-
-wp_register_script( 'jquery-ui-min', plugins_url() . '/mfs-survey/scripts/jquery/jquery-ui.min.js', 'jquery');
-wp_enqueue_script( 'jquery-ui-min' );
-
+wp_enqueue_script( 'jquery' );
+wp_enqueue_script( 'jquery-ui-dialog' );
 // Passing alert messages as an array for translation to be applicable
 $translation_array = array (
 						'survey_not_valid' => __( 'This is not valid Survey' ),
@@ -47,6 +43,7 @@ $translation_array = array (
 						'option' => __( 'Option' )
 					);
 wp_localize_script( 'question-script', 'question_object', $translation_array );
+
 
 /**
  * To include survey-style.css file

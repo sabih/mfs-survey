@@ -13,11 +13,8 @@
 wp_register_script( 'page-script', plugins_url() . '/mfs-survey/scripts/page-script.js', 'jquery' );
 wp_enqueue_script( 'page-script' );
 
-wp_register_script( 'jquery-min', plugins_url() . '/mfs-survey/scripts/jquery/jquery.min.js', 'jquery' );
-wp_enqueue_script( 'jquery-min' );
-
-wp_register_script( 'jquery-ui-min', plugins_url() . '/mfs-survey/scripts/jquery/jquery-ui.min.js', 'jquery');
-wp_enqueue_script( 'jquery-ui-min' );
+wp_enqueue_script( 'jquery' );
+wp_enqueue_script( 'jquery-ui-dialog' );
 
 /**
  * To include survey-style.css file

@@ -159,9 +159,8 @@ jQuery(document).ready(function($) {
 		var result_id = jQuery("#hid_result_id").val();
 		var question_id = jQuery("#hid_question_id").val();
 		var question = jQuery("#hid_question").val();
-		
 		var data = {
-		
+			action:'save_answer',
 			data_result_id: result_id,
 			data_question_id: question_id,
 			data_question: question,
@@ -169,14 +168,16 @@ jQuery(document).ready(function($) {
 			
 		};
 		
-		$.ajax({
+		/*$.ajax({
 			type: "POST",
 			url: url,
 			data: data,
 			success: function() {window.location.reload(true);}
 			//dataType: "HTML"
+		});*/
+		jQuery.post(ajaxcallpara.ajax_url, data, function(response) {
+			window.location.reload();
 		});
-		
 	});
 
 });

@@ -12,12 +12,9 @@
  */
 wp_register_script( 'question-script', plugins_url() . '/mfs-survey/scripts/question-script.js', 'jquery' );
 wp_enqueue_script( 'question-script' );
-
-wp_register_script( 'jquery-min', plugins_url() . '/mfs-survey/scripts/jquery/jquery.min.js', 'jquery' );
-wp_enqueue_script( 'jquery-min' );
-
-wp_register_script( 'jquery-ui-min', plugins_url() . '/mfs-survey/scripts/jquery/jquery-ui.min.js', 'jquery');
-wp_enqueue_script( 'jquery-ui-min' );
+wp_localize_script('question-script','ajaxdataparameter',array( 'ajax_url' => admin_url( 'admin-ajax.php' )));
+wp_enqueue_script( 'jquery' );
+wp_enqueue_script( 'jquery-ui-dialog' );
 
 /**
  * To include survey-style.css file
@@ -40,8 +37,10 @@ wp_localize_script( 'question-script', 'question_object', $translation_array );
 
 /**
  * Includes list.php to populate survey, page and question_type droplist
- */
+*/
 require_once( __DIR__ . '/../list.php' );
+
+
 
 // Checking if "page_saved" cookie available
 // If available then display message as "Page saved"
@@ -109,13 +108,14 @@ $ajax_survey_url = plugins_url() . '/mfs-survey/ajax/ajax-survey.php';
 				<tr>
 					<td>
 						<!-- Call function get_page_by_survey from question-script.js onchange  -->
-						<select id="sel_survey" name="sel_survey" onchange="get_page_by_survey( '<?php echo $ajax_survey_url; ?>' );">
+						<select id="sel_survey" name="sel_survey" onchange="get_page_by_survey();">
 							<option value="">-- <?php _e('Please Choose', 'mfs-survey'); ?> --</option>
 							<?php 
 							// call function populate_survey_droplist from list.php
 							echo populate_survey_droplist(); 
 							?>
 						</select>
+						<img class="ajax-loader" src="<?php echo plugins_url()?>/mfs-survey/images/ajax-loader.gif" alt="Sending ..." style="display:none;">
 					</td>
 					<td>
 						<select id="sel_page" name="sel_page" onchange="validate_sel_page();">

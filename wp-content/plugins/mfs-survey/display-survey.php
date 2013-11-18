@@ -12,7 +12,7 @@
  */
 wp_register_script( 'display-survey-script', plugins_url() . '/mfs-survey/scripts/display-survey-script.js', 'jquery' );
 wp_enqueue_script( 'display-survey-script' );
-
+wp_localize_script('display-survey-script','ajaxcallpara', array( 'ajax_url' => admin_url( 'admin-ajax.php' )));
 /**
  * To include jquery-validate.js file 
  * This file helps in front-end validation
@@ -603,7 +603,7 @@ function get_question_details( $page_id, $result_id ) {
 	require( __DIR__ . '/survey-tables.php' );
 	
 	// Includes ajax-save-answers.php
-	$ajax_save_answers_url = plugins_url() . '/mfs-survey/ajax/ajax-save-answers.php';
+	//$ajax_save_answers_url = plugins_url() . '/mfs-survey/ajax/ajax-save-answers.php';
 
 	$query_question = 
 		"
@@ -780,5 +780,4 @@ function search_survey_page_id() {
 	return $post_id;
 	
 }
-
 ?>

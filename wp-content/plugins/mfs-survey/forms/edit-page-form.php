@@ -22,18 +22,17 @@ require_once( __DIR__ . '/../list.php' );
  */
 wp_register_script( 'edit-page-script', plugins_url() . '/mfs-survey/scripts/edit-page-script.js', 'jquery' );
 wp_enqueue_script( 'edit-page-script' );
-
-wp_register_script( 'jquery-min', plugins_url() . '/mfs-survey/scripts/jquery/jquery.min.js', 'jquery' );
-wp_enqueue_script( 'jquery-min' );
-
-wp_register_script( 'jquery-ui-min', plugins_url() . '/mfs-survey/scripts/jquery/jquery-ui.min.js', 'jquery');
-wp_enqueue_script( 'jquery-ui-min' );
+wp_localize_script('edit-page-script','ajaxparameter', array( 'ajax_url' => admin_url( 'admin-ajax.php' )));
+wp_enqueue_script( 'jquery' );
+wp_enqueue_script( 'jquery-ui-dialog' );
 
 /**
  * To include survey-style.css file
  */
-wp_enqueue_style( '', plugins_url() . '/mfs-survey/styles/jquery-ui.css', '' );
+ wp_enqueue_style('', plugins_url() . '/mfs-survey/styles/jquery-ui.css', '' );
+wp_enqueue_style( '', plugins_url() . '/mfs-survey/styles/mfs-popup-dialog.css', '' );
 wp_enqueue_style( '', plugins_url() . '/mfs-survey/styles/survey-style.css', '' );
+
 
 // Passing alert message as an array for translation to be applicable
 $translation_array = array (

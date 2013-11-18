@@ -14,7 +14,7 @@
  * @return : void
  * @desc : Delete question_details for this "page_id" through ajax call
  */
-function delete_question( ajax_edit_question_url, page_id, question_id, current_page_url ) {
+function delete_question( ajaxcal, page_id, question_id, current_page_url ) {
 
 	// To remove conflict
 	jQuery.noConflict();
@@ -31,7 +31,7 @@ function delete_question( ajax_edit_question_url, page_id, question_id, current_
 			},
 			Yes: function () {
 				//window.location.href = page_delete_url;
-				delete_question_confirm(ajax_edit_question_url, page_id, question_id, current_page_url);
+				delete_question_confirm(ajaxcal, page_id, question_id, current_page_url);
 				jQuery(this).dialog("close");
 			}
 		},
@@ -44,7 +44,7 @@ function delete_question( ajax_edit_question_url, page_id, question_id, current_
 
 }
 
-function delete_question_confirm(ajax_edit_question_url, page_id, question_id, current_page_url) {
+function delete_question_confirm(ajaxcal, page_id, question_id, current_page_url) {
 
 	// To remove conflict
 	jQuery.noConflict();
@@ -75,21 +75,19 @@ function delete_question_confirm(ajax_edit_question_url, page_id, question_id, c
 	
 	page_id = parseInt(page_id);
 	
-	jQuery(document).ready(function($) {
-
 		var data = {
-		
+			action: 'edit_page_form',
 			data_page_id: page_id
 			
 		};
 
-		jQuery.post(ajax_edit_question_url, data, function(response) {
-			
+		jQuery.post(ajaxparameter.ajax_url, data, function(response) {
+		
 			window.location.href = current_page_url;
 		
 		});
 		
-	});
+	
 	
 }
 

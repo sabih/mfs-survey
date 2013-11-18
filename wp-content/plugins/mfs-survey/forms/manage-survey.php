@@ -17,12 +17,11 @@ require_once( __DIR__ . '/../survey-tables.php' );
  */
 wp_register_script( 'manage-survey-script', plugins_url() . '/mfs-survey/scripts/manage-survey-script.js', 'jquery' );
 wp_enqueue_script( 'manage-survey-script' );
+wp_enqueue_script( 'edit-survey-script' );
+wp_enqueue_style( 'jquery-ui' );
+wp_enqueue_script( 'jquery' );
+wp_enqueue_script( 'jquery-ui-dialog' );
 
-wp_register_script( 'jquery-min', plugins_url() . '/mfs-survey/scripts/jquery/jquery.min.js', 'jquery' );
-wp_enqueue_script( 'jquery-min' );
-
-wp_register_script( 'jquery-ui-min', plugins_url() . '/mfs-survey/scripts/jquery/jquery-ui.min.js', 'jquery');
-wp_enqueue_script( 'jquery-ui-min' );
 
 /**
  * To include survey-style.css file

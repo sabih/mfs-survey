@@ -106,7 +106,7 @@ $survey_name = stripslashes_deep( $result->survey_name );
 					// To show the output loop through the user_result
 					foreach($survey_users as $survey_data) {
 						$user = get_userdata($survey_data->fk_user_id);
-						$thickbox_url = admin_url('admin-ajax.php?action=mfs_survey_view_result&result_id=' . $survey_data->result_id . '&nonce=' . $nonce . '&TB_iframe=1&width=800&height=500');
+						$thickbox_url = admin_url('admin-ajax.php?action=mfs_survey_view_result&result_id=' . $survey_data->result_id . '&nonce=' . $nonce . '&TB_iframe=1&width=800&height=450');
 						
 						echo '<tr>';
 						echo '<td>' . $user->user_nicename . '</td>';

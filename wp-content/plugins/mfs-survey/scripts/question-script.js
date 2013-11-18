@@ -12,7 +12,7 @@
  * @return : void
  * @desc : Get page by survey_id through ajax call
  */
-function get_page_by_survey( ajax_survey_url ) {
+function get_page_by_survey() {
 	
 	// To remove conflict
 	jQuery.noConflict();
@@ -37,7 +37,7 @@ function get_page_by_survey( ajax_survey_url ) {
 	
 	//validation for number
 	if (isNaN(survey_id)) {
-	
+		
 		// alerts 'This is not a valid Survey'
 		jQuery('<div></div>').appendTo('body')
 		.html('<div style="text-align:center;"><h4>'+question_object.survey_not_valid+'</h4></div>')
@@ -59,26 +59,22 @@ function get_page_by_survey( ajax_survey_url ) {
 	
 	survey_id = parseInt(survey_id);
 	
-	jQuery(document).ready(function($) {
-
 		var data = {
-		
+			action: "form_survey",
 			data_survey_id: survey_id		
 			
 		};
-
-		jQuery.post(ajax_survey_url, data, function(response) {			
-			
+	jQuery('.ajax-loader').show();
+		jQuery.post(ajaxdataparameter.ajax_url, data, function(response) {	
 			jQuery('#sel_page').html(response);
 			jQuery('#sel_next_page').html(response);
-			
 			// If no page added for a particular survey then
 			// display alert message
 			var count = jQuery("#sel_page option").length;
 			var survey_value = jQuery("#sel_survey").val();
-			
+			jQuery('.ajax-loader').hide();
 			if( count === 1 && survey_value != "" ) {
-			
+				
 				// alerts 'Please add Page for this Survey'
 				jQuery('<div></div>').appendTo('body')
 				.html('<div style="text-align:center;"><h4>'+question_object.add_page+'</h4></div>')
@@ -93,15 +89,13 @@ function get_page_by_survey( ajax_survey_url ) {
 					close: function (event, ui) {
 						jQuery(this).remove();
 					}
-				});
+					
+            });		
 				return false;
-			
 			}
 			
-		
 		});
 		
-	});
 
 }
 

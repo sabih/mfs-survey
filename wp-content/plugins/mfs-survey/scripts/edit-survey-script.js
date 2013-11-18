@@ -14,7 +14,9 @@
  * @return : void
  * @desc : Delete page_details for this "page_id" through ajax call
  */
-function delete_page( ajax_edit_page_url, survey_id, page_id, current_page_url ) {	
+ 
+
+function delete_page( ajaxedit, survey_id, page_id, current_page_url ) {	
 	
 	// To remove conflict
 	jQuery.noConflict();
@@ -30,8 +32,9 @@ function delete_page( ajax_edit_page_url, survey_id, page_id, current_page_url )
 				jQuery(this).dialog("close");
 			},
 			Yes: function () {
-				//window.location.href = page_delete_url;
-				delete_page_confirm(ajax_edit_page_url, survey_id, page_id, current_page_url);
+				
+				delete_page_confirm(ajaxedit, survey_id, page_id, current_page_url);
+				//window.location.href = current_page_url;
 				jQuery(this).dialog("close");
 			}
 		},
@@ -44,7 +47,7 @@ function delete_page( ajax_edit_page_url, survey_id, page_id, current_page_url )
 
 }
 
-function delete_page_confirm(ajax_edit_page_url, survey_id, page_id, current_page_url) {
+function delete_page_confirm(ajaxedit, survey_id, page_id, current_page_url) {
 
 	// To remove conflict
 	jQuery.noConflict();
@@ -100,24 +103,21 @@ function delete_page_confirm(ajax_edit_page_url, survey_id, page_id, current_pag
 	}
 	
 	page_id = parseInt(page_id);
-	
-	jQuery(document).ready(function($) {
-
-		var data = {
-		
+	var data = {
+			action:'edit_survey',
 			data_survey_id: survey_id,
 			data_page_id: page_id
 			
 		};
 
-		jQuery.post(ajax_edit_page_url, data, function(response) {
+		jQuery.post(ajaxdata.ajax_url, data, function(response) {
+	
 			
 			window.location.href = current_page_url;
 		
 		});
-		
-	});
 
+		
 }
 
 

@@ -22,12 +22,11 @@ require_once( __DIR__ . '/../list.php' );
  */
 wp_register_script( 'edit-survey-script', plugins_url() . '/mfs-survey/scripts/edit-survey-script.js', 'jquery' );
 wp_enqueue_script( 'edit-survey-script' );
+wp_localize_script('edit-survey-script','ajaxdata', array( 'ajax_url' => admin_url( 'admin-ajax.php' )));
 
-wp_register_script( 'jquery-min', plugins_url() . '/mfs-survey/scripts/jquery/jquery.min.js', 'jquery' );
-wp_enqueue_script( 'jquery-min' );
+wp_enqueue_script( 'jquery' );
+wp_enqueue_script( 'jquery-ui-dialog' );
 
-wp_register_script( 'jquery-ui-min', plugins_url() . '/mfs-survey/scripts/jquery/jquery-ui.min.js', 'jquery');
-wp_enqueue_script( 'jquery-ui-min' );
 
 /**
  * To include survey-style.css file
@@ -47,7 +46,8 @@ wp_localize_script( 'edit-survey-script', 'edit_survey_object', $translation_arr
 /**
  * Includes ajax-edit-page.php
  */
-$ajax_edit_page_url = plugins_url() . '/mfs-survey/ajax/ajax-edit-page.php';
+$ajax_edit_page_url = array('ajax_url' => admin_url( 'admin-ajax.php' ));
+
 
 $survey_id = $_GET["survey_id"];
 
@@ -61,6 +61,7 @@ $start_page_id = $result->fk_start_page_id;
 $end_page_id = $result->fk_end_page_id;
 
 $current_page_url = $_SERVER["REQUEST_URI"];
+
 ?>
 
 <div class="wrap">
@@ -195,11 +196,10 @@ $current_page_url = $_SERVER["REQUEST_URI"];
 						}
 						
 						$id_incr++;					
-					
 						// Delete link
 						echo "
 							<td style='text-align:right;'>
-								<a onclick='delete_page(\"$ajax_edit_page_url\", ".$survey_id.", ".$page_id.", \"$current_page_url\");' href='javascript:void(0);'>".__('Delete', 'mfs-survey')."</a>
+								<a href='javascript:void(0);' onclick='delete_page(\"$ajax_edit_page_url\", ".$survey_id.", ".$page_id.", \"$current_page_url\");'>".__('Delete', 'mfs-survey')."</a>
 							</td></tr>"; 					
 					
 					}
