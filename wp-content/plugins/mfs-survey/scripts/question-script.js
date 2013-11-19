@@ -61,11 +61,11 @@ function get_page_by_survey() {
 	
 		var data = {
 			action: "form_survey",
-			data_survey_id: survey_id		
+			data_survey_id: survey_id	
 			
 		};
 	jQuery('.ajax-loader').show();
-		jQuery.post(ajaxdataparameter.ajax_url, data, function(response) {	
+		jQuery.post(ajaxdataparameter.ajax_url, data, function(response) {
 			jQuery('#sel_page').html(response);
 			jQuery('#sel_next_page').html(response);
 			// If no page added for a particular survey then

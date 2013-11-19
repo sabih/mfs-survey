@@ -111,7 +111,6 @@ function delete_page_confirm(ajaxedit, survey_id, page_id, current_page_url) {
 		};
 
 		jQuery.post(ajaxdata.ajax_url, data, function(response) {
-	
 			
 			window.location.href = current_page_url;
 		
