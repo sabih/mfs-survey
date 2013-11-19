@@ -13,12 +13,6 @@
 wp_register_script( 'display-survey-script', plugins_url() . '/mfs-survey/scripts/display-survey-script.js', 'jquery' );
 wp_enqueue_script( 'display-survey-script' );
 wp_localize_script('display-survey-script','ajaxcallpara', array( 'ajax_url' => admin_url( 'admin-ajax.php' )));
-/**
- * To include jquery-validate.js file 
- * This file helps in front-end validation
- */
-wp_register_script( 'jquery-validate', plugins_url() . '/mfs-survey/scripts/jquery/jquery-validate.js', array('jquery') );
-wp_enqueue_script( 'jquery-validate' );
 
 /**
  * To include survey-style.css file

@@ -1,16 +1,16 @@
 === MFS Survey ===
 Contributors: Mindfire-Solutions
 Contributor's website: http://www.mindfiresolutions.com/
-Tags: mfs survey, wordpress survey, wp survey, wpsurvey, plugin, survey plugin
-Requires at least: 2.8
-Tested up to: 3.5.1
-Stable tag: 1.4
+Tags: mfs survey, wordpress survey, wp survey, wpsurvey, survey plugin
+Requires at least: 3.0
+Tested up to: 3.7.1
+Stable tag: 1.0
 
-The MFS Survey WordPress plugin lets you add Survey to your website
+The MFS Survey plugin lets you add surveys to your website
 
 == Description ==
 
-This plugin can be used to add survey in your website. Admin can create multiple choice, single choice and subjective type questions.
+This plugin can be used to add surveys in your website. Admin can create single choice, multiple choice and subjective type questions.
 
 1. This plugin works mainly in 3 steps.
    Step1: Add survey (You need to provide a name for a particular survey)
@@ -32,7 +32,7 @@ This plugin can be used to add survey in your website. Admin can create multiple
    Once published you can't unpublish, edit or delete the survey.
    If you need to remove the survey from front-end then, uncheck the Active option.
 6. You can see the survey report for all surveys in "Survey Result" page.
-7. This plugin is multilingual.
+7. This plugin supports multilingual.
 
 == Installation ==
 
