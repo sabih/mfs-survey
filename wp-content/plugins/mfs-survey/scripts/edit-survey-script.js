@@ -122,12 +122,13 @@ function delete_page_confirm(ajaxedit, survey_id, page_id, current_page_url) {
 
 /**
  * @method : page_checkbox_status()
+ * @param : survey_id integer
  * @param : page_id integer
  * @param : id_no integer
  * @return : void
- * @desc : This function sets checkbox id and status in hidden field
+ * @desc : This function updates page status on checkbox check
  */
-function page_checkbox_status( page_id, id_no ) {
+function page_checkbox_status( survey_id, page_id, id_no ) {
 
 	// To remove conflict
 	jQuery.noConflict();
@@ -137,29 +138,30 @@ function page_checkbox_status( page_id, id_no ) {
 	
 	if( chk_flag === true ) {
 		
-		//get the value of hidden field
-		var chk_ids_prev = jQuery("#hid_page_checked_ids").val();
-		
-		//add id and status
-		var chk_ids_now = chk_ids_prev + "," + page_id + "||A";
+		var chk_active_inactive = page_id + "||A";
 		
 	}
 	else if( chk_flag === false ) {
-	
-		//get the value of hidden field
-		var chk_ids_prev = jQuery("#hid_page_checked_ids").val();
 		
-		//add id and status
-		var chk_ids_now = chk_ids_prev + "," + page_id + "||I";
-	
+		var chk_active_inactive = page_id + "||I";
+		
 	}
 	
-	//set hidden field value null
-	jQuery("#hid_page_checked_ids").val('');
+	var data = {
+		action:'page_active_inactive',
+		data_survey_id: survey_id,
+		data_chk_status: chk_active_inactive
+	};
 	
-	//set the hidden vield value
-	jQuery("#hid_page_checked_ids").val(chk_ids_now);
-
+	jQuery.post(
+			ajaxdata.ajax_url, 
+			data, 
+			function(response) {
+				var x= jQuery('#sel_start_page').html(response.start_option);
+				jQuery('#sel_end_page').html(response.end_option);
+			}, 
+			"json"
+		);
 }
 
 /**

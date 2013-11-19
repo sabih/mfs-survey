@@ -495,3 +495,67 @@ function mfs_ajax_edit() {
 	$options .= populate_page_droplist( $survey_id, $start_page_id );
 	echo $options;
 }
+
+//To update Start and End page dropdown on checkbox status
+add_action('wp_ajax_page_active_inactive', 'mfs_page_active_inactive_status');
+
+/**
+ * @method : mfs_page_active_inactive_status()
+ * @return : void
+ * @desc : On checkbox active inactive status page dropdown gets updated
+ */
+function mfs_page_active_inactive_status() {
+
+	/**
+	* Includes survey-tables.php
+	*/
+	require_once( __DIR__ . '/survey-tables.php' );
+	
+	/**
+	 * Includes list.php to populate page droplist
+	 */
+	require_once( __DIR__ . '/list.php' );
+	$date = date( 'Y-m-d H:i:s' );
+	
+	$data_chk_status = $_POST["data_chk_status"];
+	
+	list($chk_id, $chk_status) = explode("||", $data_chk_status);
+	
+	// update wp_survey_page table to change page_status
+	$wpdb->update(
+		$wp_survey_page, 
+		array( 
+			'page_status' => $chk_status,
+			'date_modified' => $date
+			),
+		array( 'page_id' => $chk_id ),
+		array( 
+			'%s',
+			'%s'
+		),
+		array( '%d' )
+	);
+		
+	$survey_id = $_POST["data_survey_id"];
+	
+	// This query returns start_page_id and survey_name from wp_survey table
+	$result = $wpdb->get_row( $wpdb->prepare( "SELECT fk_start_page_id, fk_end_page_id FROM $wp_survey WHERE survey_id = %d", $survey_id ));
+	
+	$start_page_id = $result->fk_start_page_id;
+	$end_page_id = $result->fk_end_page_id;
+	
+    $options = "";
+    $options .= "<option value=''>-- " . __( 'Please Choose', 'mfs-survey' ) . " --</option>";
+    $start_options = $end_options = $options;
+	
+	$start_options .= populate_page_droplist( $survey_id, $start_page_id );
+	$end_options .= populate_page_droplist( $survey_id, $end_page_id );
+	
+	echo json_encode(
+				array(
+					'start_option' => $start_options,
+					'end_option' => $end_options
+					)
+			);
+	exit;
+}
