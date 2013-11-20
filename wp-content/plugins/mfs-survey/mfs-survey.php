@@ -538,7 +538,7 @@ function mfs_page_active_inactive_status() {
 		
 	$survey_id = $_POST["data_survey_id"];
 	
-	// This query returns start_page_id and survey_name from wp_survey table
+	// This query returns start_page_id and end_page_id from wp_survey table
 	$result = $wpdb->get_row( $wpdb->prepare( "SELECT fk_start_page_id, fk_end_page_id FROM $wp_survey WHERE survey_id = %d", $survey_id ));
 	
 	$start_page_id = $result->fk_start_page_id;
@@ -548,13 +548,55 @@ function mfs_page_active_inactive_status() {
     $options .= "<option value=''>-- " . __( 'Please Choose', 'mfs-survey' ) . " --</option>";
     $start_options = $end_options = $options;
 	
+	// Stored value list for Start page dropdown in $start_options
 	$start_options .= populate_page_droplist( $survey_id, $start_page_id );
+	
+	// Stored value list for End page dropdown in $end_options
 	$end_options .= populate_page_droplist( $survey_id, $end_page_id );
+		
+	// To store value list for Next Page dropdown for all pages
+	// We store value list in $next_page_options[] array
+	// This query returns page details from wp_survey_page table
+	$query = 
+	"
+		SELECT page_id
+		FROM $wp_survey_page 
+		WHERE fk_survey_id = %d
+		ORDER BY page_id
+	";
+	$results = $wpdb->get_results( $wpdb->prepare( $query, $survey_id ));
+	
+	foreach( $results as $result ) {
+	
+		$page_id = $result->page_id;
+	
+		// This query returns question_id, question_data from wp_survey_question table
+		$query = "
+					SELECT question_id, question_data
+					FROM $wp_survey_question 
+					WHERE fk_page_id = %d AND
+					question_type = 'Button'
+				";
+		$row = $wpdb->get_row( $wpdb->prepare( $query, $page_id ));
+		
+		$question_id = $row->question_id;						
+		$question_data = $row->question_data;
+		$question_data = unserialize( ( $question_data ) );						
+		$next_page_id = $question_data[next_page];
+		
+		if ($question_data != NULL) {
+		
+			$next_page_options[] = $options . populate_next_page_droplist( $survey_id, $page_id, $next_page_id );
+		
+		}
+		
+	}
 	
 	echo json_encode(
 				array(
 					'start_option' => $start_options,
-					'end_option' => $end_options
+					'end_option' => $end_options,
+					'next_page_option' => $next_page_options
 					)
 			);
 	exit;

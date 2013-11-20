@@ -107,7 +107,6 @@ function delete_page_confirm(ajaxedit, survey_id, page_id, current_page_url) {
 			action:'edit_survey',
 			data_survey_id: survey_id,
 			data_page_id: page_id
-			
 		};
 
 		jQuery.post(ajaxdata.ajax_url, data, function(response) {
@@ -115,7 +114,6 @@ function delete_page_confirm(ajaxedit, survey_id, page_id, current_page_url) {
 			window.location.href = current_page_url;
 		
 		});
-
 		
 }
 
@@ -128,7 +126,7 @@ function delete_page_confirm(ajaxedit, survey_id, page_id, current_page_url) {
  * @return : void
  * @desc : This function updates page status on checkbox check
  */
-function page_checkbox_status( survey_id, page_id, id_no ) {
+function page_checkbox_status( survey_id, page_id, id_no, page_count ) {
 
 	// To remove conflict
 	jQuery.noConflict();
@@ -157,9 +155,12 @@ function page_checkbox_status( survey_id, page_id, id_no ) {
 			ajaxdata.ajax_url, 
 			data, 
 			function(response) {
-				var x= jQuery('#sel_start_page').html(response.start_option);
+				jQuery('#sel_start_page').html(response.start_option);
 				jQuery('#sel_end_page').html(response.end_option);
-			}, 
+				for(var id_incr=0; id_incr < page_count; id_incr++) {
+					jQuery('#sel_next_page'+id_incr).html(response.next_page_option[id_incr]);
+				}
+			},
 			"json"
 		);
 }

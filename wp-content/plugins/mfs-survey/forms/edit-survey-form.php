@@ -154,7 +154,7 @@ $current_page_url = $_SERVER["REQUEST_URI"];
 							if( $result->page_status === 'A' ) {
 								echo "checked='checked'";
 							}
-						echo " onclick='page_checkbox_status(" . $survey_id . "," . $page_id . "," . $id_incr . ");'/></td>";					
+						echo " onclick='page_checkbox_status(" . $survey_id . "," . $page_id . "," . $id_incr . "," . count( $results ) . ");'/></td>";
 						
 						// "Droplist" displaying next_page
 						// This query returns question_id, question_data from wp_survey_question table
