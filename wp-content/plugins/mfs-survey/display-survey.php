@@ -223,6 +223,7 @@ function survey_exists($survey_id) {
 			SELECT survey_id
 			FROM $wp_survey
 			WHERE survey_id = %d
+			AND publish_status = 'I'
 		";
 			
 	$survey_exist = $wpdb->get_var( $wpdb->prepare( $query, $survey_id ));
