@@ -774,7 +774,63 @@ function edit_question() {
 	$date = date( 'Y-m-d H:i:s' );
 	
 	$page_id = $_POST['hid_page_id'];
-	$question_id = $_POST['hid_question_id'];	
+	$question_id = $_POST['hid_question_id'];
+	
+	// Check if the question type is Radiobutton then
+	// Update its next_page values so that the previous
+	// rad_option be removed from wp_survey_question table
+	// This query returns question_type from wp_survey_question table
+	$query = "
+				SELECT question_type
+				FROM $wp_survey_question 
+				WHERE fk_page_id = %d AND
+				question_type != 'Button'
+			";
+	$row = $wpdb->get_row( $wpdb->prepare( $query, $page_id ));
+	$stored_question_type = $row->question_type;
+	
+	// If question_type = Radiobutton then
+	// Remove radio_next_page
+	if( $stored_question_type === 'Radiobutton' ) {
+	
+		// This query returns question details from wp_survey_question table
+		$query = "
+					SELECT question_id, question_data
+					FROM $wp_survey_question 
+					WHERE fk_page_id = %d AND
+					question_type = 'Button'
+				";
+		$row = $wpdb->get_row( $wpdb->prepare( $query, $page_id ));
+		
+		$stored_question_id = $row->question_id;
+		$stored_question_data = $row->question_data;
+		$stored_question_data = unserialize( ( $stored_question_data ) );
+		$next_page_id = $stored_question_data[next_page];
+		
+		// Fetch next_page from question_data and then 
+		// update next_page such that radio_next_page is removed
+		$next_page = array(
+			'next_page' => $next_page_id
+		);
+	
+		$button_data = serialize( $next_page );
+	
+		// update wp_survey_question table to change question_data
+		$wpdb->update(
+			$wp_survey_question, 
+			array( 
+				'question_data' => $button_data,
+				'date_modified' => $date
+				),
+			array( 'question_id' => $stored_question_id ),
+			array(
+				'%s',
+				'%s'
+				),
+			array( '%d' )
+		);
+		
+	}
 	
 	$question = wp_filter_kses( $_POST['txt_question'] );	
 	$question_type = $_POST['sel_question_type'];
